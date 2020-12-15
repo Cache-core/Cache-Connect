@@ -11,7 +11,16 @@ environment:
       BOOST_LIBRARYDIR: C:\Libraries\boost_1_69_0\lib64-msvc-14.1
       QTDIR: C:\Qt\5.13.2\msvc2017_64
       PATH: '%PATH%;%QTDIR%\bin;%BOOST_ROOT%;%BOOST_LIBRARYDIR%'
-      OPENSSL_ROOT: C:\OpenSSL-Win64\bin
+      # We bundle up protoc.exe and only the parts of boost and openssl we need so
+      # that it's a small download. We also use appveyor's free cache, avoiding fees
+      # downloading from S3 each time.
+      # TODO: script to create this package.
+      DIVVYD_DEPS_PATH: divvyd_deps17.04
+      DIVVYD_DEPS_URL: https://xdv.github.io/downloads/appveyor/%DIVVYD_DEPS_PATH%.zip
+
+      # CMake honors these environment variables, setting the include/lib paths.
+      BOOST_ROOT: C:/%DIVVYD_DEPS_PATH%/boost
+      OPENSSL_ROOT: C:/%DIVVYD_DEPS_PATH%/openssl
 
 build_script:
   - md build
