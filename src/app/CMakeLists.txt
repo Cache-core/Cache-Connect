@@ -1,4 +1,4 @@
 project(cache-connect)
-add_executable(cacheconnect main.cpp)
-target_link_libraries(cacheconnect Qt5::Widgets CacheConnect CacheConnectUI)
-install(TARGETS cacheconnect DESTINATION bin)
+add_executable(cache-connect main.cpp)
+target_link_libraries(cache-connect Qt5::Widgets CacheConnect CacheConnectUI)
+install(TARGETS cache-connect DESTINATION bin)
