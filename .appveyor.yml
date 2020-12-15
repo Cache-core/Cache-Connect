@@ -15,9 +15,9 @@ environment:
 build_script:
   - md build
   - cd build
-  - cmake -G "Visual Studio 15 2017 Win64" ..
-  - ls
-  - MSBuild cache-connect.sln /p:Configuration=Release /m
+  - ps: 'Write-Host "Running $env:BUILDER with $env:GENERATOR" $env:PLATFORM -ForegroundColor Magenta'
+  - if "%BUILDER%"=="CMake" cmake -G "%GENERATOR%" -DCMAKE_BUILD_TYPE=%CONFIGURATION% ..
+  - MSBuild Cache-Desktop.sln /m
    
 after_build: 
   - if not defined APPVEYOR_BUILD_NUMBER (set APPVEYOR_BUILD_NUMBER=%APPVEYOR_BUILD_ID%)
