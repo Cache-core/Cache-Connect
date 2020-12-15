@@ -11,9 +11,10 @@ environment:
       BOOST_LIBRARYDIR: C:\Libraries\boost_1_69_0\lib64-msvc-14.1
       QTDIR: C:\Qt\5.13.2\msvc2017_64
       PATH: '%PATH%;%QTDIR%\bin;%BOOST_ROOT%;%BOOST_LIBRARYDIR%'
-      DIVVYD_DEPS_PATH: divvyd_deps17.04
-      DIVVYD_DEPS_URL: https://xdv.github.io/downloads/appveyor/%DIVVYD_DEPS_PATH%.zip
-      OPENSSL_ROOT: C:/%DIVVYD_DEPS_PATH%/openssl
+
+install:
+  - ps: Start-FileDownload 'http://slproweb.com/download/Win32OpenSSL-1_0_2a.exe'
+  - ps: Start-Process "Win32OpenSSL-1_0_2a.exe" -ArgumentList "/silent /verysilent /sp- /suppressmsgboxes" -Wait
 
 build_script:
   - md build
