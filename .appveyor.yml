@@ -8,6 +8,7 @@ build_script:
   - md build
   - cd build
   - cmake -G "Visual Studio 15 2017 Win64" ..
+  - ls
   - MSBuild cache-connect.sln /p:Configuration=Release /m
    
 after_build: 
