@@ -17,7 +17,7 @@ build_script:
   - md build
   - cd build
   - ps: 'Write-Host "Running $env:BUILDER with $env:GENERATOR" $env:PLATFORM -ForegroundColor Magenta'
-  - if "%BUILDER%"=="CMake" cmake -G "%GENERATOR%" ..
+  - if "%BUILDER%"=="CMake" cmake -G "%GENERATOR%" -DCMAKE_USE_OPENSSL=ON ..
   - ls
   - MSBuild Cache-Connect.sln /m
    
