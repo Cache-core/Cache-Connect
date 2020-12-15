@@ -11,7 +11,7 @@ environment:
       BOOST_LIBRARYDIR: C:\Libraries\boost_1_69_0\lib64-msvc-14.1
       QTDIR: C:\Qt\5.13.2\msvc2017_64
       PATH: '%PATH%;%QTDIR%\bin;%BOOST_ROOT%;%BOOST_LIBRARYDIR%'
-      OPENSSL_ROOT_DIR: 'C:\OpenSSL-Win64\bin'
+      OPENSSL_PATH: 'C:\OpenSSL-v111-Win64'
 
 build_script:
   - md build
