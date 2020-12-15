@@ -4,6 +4,10 @@ environment:
   BOOST_ROOT: C:\Libraries\boost_1_67_0
   BOOST_LIBRARYDIR: C:\Libraries\boost_1_67_0\lib64-msvc-14
 
+install:
+  - set C:\Qt\5.15.1\mingw492_32
+  - set PATH=%PATH%;%QTDIR%\bin;C:\MinGW\bin
+
 build_script:
   - md build
   - cd build
