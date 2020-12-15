@@ -18,7 +18,7 @@ build_script:
   - ps: 'Write-Host "Running $env:BUILDER with $env:GENERATOR" $env:PLATFORM -ForegroundColor Magenta'
   - if "%BUILDER%"=="CMake" cmake -G "%GENERATOR%" ..
   - ls
-  - MSBuild Cache-Connect.sln /m
+  - MSBuild CacheConnect.sln /m
    
 after_build: 
   - if not defined APPVEYOR_BUILD_NUMBER (set APPVEYOR_BUILD_NUMBER=%APPVEYOR_BUILD_ID%)
