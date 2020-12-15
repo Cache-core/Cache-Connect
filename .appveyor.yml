@@ -14,6 +14,8 @@ environment:
       OPENSSL_ROOT_DIR: C:\OpenSSL-Win64\lib
 
 build_script:
+  - md external
+  - git clone https://github.com/viaduck/openssl-cmake external/openssl-cmake
   - md build
   - cd build
   - ps: 'Write-Host "Running $env:BUILDER with $env:GENERATOR" $env:PLATFORM -ForegroundColor Magenta'
