@@ -12,8 +12,10 @@ environment:
       QTDIR: C:\Qt\5.13.2\msvc2017_64
       PATH: '%PATH%;%QTDIR%\bin;%BOOST_ROOT%;%BOOST_LIBRARYDIR%'
       OPENSSL_PATH: 'C:\OpenSSL-v111-Win64'
+      CMD_IN_ENV: "cmd /E:ON /V:ON /C .\\appveyor\\run_with_env.cmd"
 
 build_script:
+  - "%CMD_IN_ENV% python setup.py build --openssl=\"%OPENSSL_PATH%\""
   - md build
   - cd build
   - ps: 'Write-Host "Running $env:BUILDER with $env:GENERATOR" $env:PLATFORM -ForegroundColor Magenta'
