@@ -1,0 +1,11 @@
+*.pro
+*.user
+*.kdev4
+apidocs
+
+build/
+tags/
+Release/
+Debug/
+CMakeFiles/
+.vscode/
