@@ -13,7 +13,7 @@ environment:
       PATH: '%PATH%;%QTDIR%\bin;%BOOST_ROOT%;%BOOST_LIBRARYDIR%'
 
 install:
-  - ps: Start-FileDownload 'http://slproweb.com/download/Win32OpenSSL-1_0_2a.exe'
+  - ps: Start-FileDownload 'http://slproweb.com/download/Win64OpenSSL-1_0_2u.exe'
   - ps: Start-Process "Win32OpenSSL-1_0_2a.exe" -ArgumentList "/silent /verysilent /sp- /suppressmsgboxes" -Wait
 
 build_script:
