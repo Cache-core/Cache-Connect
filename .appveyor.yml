@@ -11,13 +11,13 @@ environment:
       BOOST_LIBRARYDIR: C:\Libraries\boost_1_69_0\lib64-msvc-14.1
       QTDIR: C:\Qt\5.13.2\msvc2017_64
       PATH: '%PATH%;%QTDIR%\bin;%BOOST_ROOT%;%BOOST_LIBRARYDIR%'
-      OPENSSL_ROOT_DIR: C:\OpenSSL-Win64\
+      OPENSSL_ROOT_DIR: C:\OpenSSL-Win64\lib
 
 build_script:
   - md build
   - cd build
   - ps: 'Write-Host "Running $env:BUILDER with $env:GENERATOR" $env:PLATFORM -ForegroundColor Magenta'
-  - if "%BUILDER%"=="CMake" cmake -G "%GENERATOR%" .. -DOPENSSL_ROOT_DIR=C:\OpenSSL-Win64\ -DOPENSSL_INCLUDE_DIR=C:\OpenSSL-Win64\include -DOPENSSL_CRYPTO_LIBRARY=C:\OpenSSL-Win64\crypto
+  - if "%BUILDER%"=="CMake" cmake -G "%GENERATOR%" .. -DOPENSSL_INCLUDE_DIR=C:\OpenSSL-Win64\include -DOPENSSL_CRYPTO_LIBRARY=C:\OpenSSL-Win64\crypto
   - ls
   - MSBuild Cache-Connect.sln /m
    
