@@ -19,7 +19,7 @@ build_script:
   - md build
   - cd build
   - ps: 'Write-Host "Running $env:BUILDER with $env:GENERATOR" $env:PLATFORM -ForegroundColor Magenta'
-  - if "%BUILDER%"=="CMake" cmake -G "%GENERATOR%" .. -DOPENSSL_INCLUDE_DIR=C:\OpenSSL-Win64\include -DOPENSSL_CRYPTO_LIBRARY=C:\OpenSSL-Win64\crypto -BUILD_OPENSSL=ON -DOPENSSL_BRANCH=OpenSSL_1_0_2u
+  - if "%BUILDER%"=="CMake" cmake -G "%GENERATOR%" ..
   - ls
   - MSBuild Cache-Connect.sln /m
    
