@@ -11,4 +11,3 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Network Widgets Quick Qu
 include_directories(include src)
 
 add_subdirectory(src)
-add_subdirectory(include)
