@@ -9,4 +9,3 @@ set(CMAKE_AUTORCC ON)
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Network Widgets Quick QuickControls2)
 
 add_subdirectory(src)
-add_subdirectory(external/openssl-cmake)
