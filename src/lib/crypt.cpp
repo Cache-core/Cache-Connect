@@ -250,7 +250,7 @@ QByteArray Crypt::decryptAES(QByteArray passphrase, QByteArray &data)
 
 QByteArray Crypt::randomBytes(int size)
 {
-	unsigned char arr[size];
+	char* arr = new unsigned char [size];
 	RAND_bytes(arr,size);
 
 	QByteArray buffer = QByteArray(reinterpret_cast<char*>(arr), size);
