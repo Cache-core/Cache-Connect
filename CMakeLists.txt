@@ -8,9 +8,6 @@ set(CMAKE_AUTORCC ON)
 
 find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Network Widgets Quick QuickControls2)
 
-find_package(OpenSSL REQUIRED)
-target_link_libraries(Cache-Connect OpenSSL::SSL)
-
 include_directories(include src)
 
 add_subdirectory(src)
