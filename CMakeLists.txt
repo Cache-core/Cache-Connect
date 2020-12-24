@@ -11,3 +11,5 @@ find_package(Qt5 ${QT_MIN_VERSION} CONFIG REQUIRED Core Network Widgets Quick Qu
 include_directories(src)
 
 add_subdirectory(src)
+
+set(OPENSSL_INCLUDE_DIR "C:\\OpenSSL-Win64\\bin\\")
